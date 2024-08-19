@@ -7,3 +7,6 @@ requisiti:
 - almeno 1 server linux dove poter mettere in crontab lo script
 - tutti i server devono avere una share condivisa in comune (vedi nfs)
 - in questo caso viene utilizzato una componente della suite di SAS per l'invio mail (in alternativa bisogna configurare un server mail, vedi uno scripot di esempio nel file sendmail_esempio.txt)
+
+
+PS. devi creare l'alberatura dei path nel file system condiviso, in modo da disporre gli script e i file che verranno generati nel giusto percorso, così da far funzionare l'intero processo
