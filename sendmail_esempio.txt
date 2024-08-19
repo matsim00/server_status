@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Variabili
+TO="destinatario@example.com"
+SUBJECT="Oggetto dell'email"
+BODY="Questo è il corpo dell'email"
+ATTACHMENT="/percorso/del/file/allegato.txt"
+
+# Comando per inviare l'email
+echo "$BODY" | mailx -s "$SUBJECT" -a "$ATTACHMENT" "$TO"
+
+# Verifica se l'email è stata inviata con successo
+if [ $? -eq 0 ]; then
+    echo "Email inviata con successo a $TO"
+else
+    echo "Errore nell'invio dell'email a $TO"
+fi
