@@ -1,12 +1,13 @@
 # service_status.sh
 
-Lo scopo di questo script è quello di fare ogni tot di tempo dei controlli sui servizi esposti in locale o su internet e assicurarsi del corretto funzionamento, in caso di disservizio viene generato un file e subito parte in catena uno script di invio mail per segnalarci il problema
+Lo script `service_status.sh` ha lo scopo di eseguire controlli periodici sui servizi esposti, sia in locale che su Internet, per verificarne il corretto funzionamento. In caso di disservizio, viene generato un file di log e, successivamente, avviato automaticamente uno script per l'invio di una segnalazione via email.
 
-requisiti:
+## Requisiti
 
-- almeno 1 server linux dove poter mettere in crontab lo script
-- tutti i server devono avere una share condivisa in comune (vedi nfs)
-- in questo caso viene utilizzato una componente della suite di SAS per l'invio mail (in alternativa bisogna configurare un server mail, vedi uno script di esempio nel file sendmail_esempio.txt)
+- **Server Linux**: è necessario almeno un server Linux dove configurare l'esecuzione periodica dello script tramite `crontab`.
+- **Condivisione di risorse**: tutti i server coinvolti devono avere una condivisione di rete in comune (ad esempio, tramite NFS).
+- **Invio email**: lo script utilizza una componente della suite SAS per l'invio delle email. In alternativa, è possibile configurare un server di posta. Trovi uno script di esempio per configurarlo nel file `sendmail_esempio.txt`.
 
+## Note aggiuntive
 
-PS. devi creare l'alberatura dei path nel file system condiviso (in questo caso è nfs_share), in modo da disporre gli script e i file che verranno generati nel giusto percorso, così da far funzionare l'intero processo
+- È necessario creare la struttura delle directory nel file system condiviso (ad esempio, in `nfs_share`) per organizzare correttamente gli script e i file generati, garantendo il corretto funzionamento dell'intero processo.
